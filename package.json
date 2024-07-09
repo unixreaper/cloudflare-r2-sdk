@@ -1,0 +1,37 @@
+{
+  "name": "cloudflare-r2-sdk",
+  "version": "1.0.2",
+  "description": "A streamlined Node.js library for effortless integration and management of Cloudflare R2 Object Storage.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unixreaper/r2-sdk.git"
+  },
+  "keywords": [
+    "cloudflare",
+    "r2",
+    "sdk",
+    "object",
+    "storage",
+    "s3",
+    "obs",
+    "oss",
+    "nodejs",
+    "library",
+    "bucket"
+  ],
+  "author": "Michael",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unixreaper/r2-sdk/issues"
+  },
+  "homepage": "https://github.com/unixreaper/r2-sdk#readme",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.0.0",
+    "@aws-sdk/s3-request-presigner": "^3.0.0",
+    "axios": "^0.21.1"
+  }
+}
