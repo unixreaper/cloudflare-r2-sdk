@@ -44,7 +44,7 @@ console.log(uploadResponse);
     "statusCode": 200,
     "expire": 604800, // in ms default is 7 days
     "bucket": "company",
-    "keyname": "img/image.jpg",
+    "keyname": "img/image.jpg", // your path EX. user/john/profile-icon.png = https://bucketurl/user/john/profile-icon.jpg
     "url": "https://company.7492760310487df2252ef9441759c9a0.r2.cloudflarestorage.com/img/image.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=f525dac59ab797357113dcf3dedbdbca%2F20240709%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240709T030506Z&X-Amz-Expires=604800&X-Amz-Signature=a15aaa3fb8162eb285e8d7eabf99253adee28dc22945c867e9c0cca959388936&X-Amz-SignedHeaders=host&x-id=GetObject", // temp url
     "permanentURL": null, // Will appears when after you set a Custom Public Domain
     "message": "Generated signed URL for object"
@@ -60,7 +60,7 @@ console.log(uploadResponse);
 ```js
 const objectURL = await objectStorageClient.getObjectURL({
   bucketName: BUCKET_NAME,
-  keyName: 'img/image.jpg',
+  keyName: 'img/image.jpg', // path inside bucket
   expiresIn: 30 // Expires in MS
 });
 
@@ -74,7 +74,7 @@ console.log(objectURL);
   "statusCode": 200,
   "expire": 30,
   "bucket": "company",
-  "keyname": "img/image.jpg",
+  "keyname": "img/image.jpg", // path inside bucket
   "url": "https://company.7492760310487df2252ef9441759c9a0.r2.cloudflarestorage.com/img/image.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=f525dac59ab797357113dcf3dedbdbca%2F20240709%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240709T024330Z&X-Amz-Expires=30&X-Amz-Signature=e4675c9df9e2c7a32989254f87e2cabe006dc057f291a4c231c788d51c10bc29&X-Amz-SignedHeaders=host&x-id=GetObject", // temp url
   "permanentURL": null, // Will appears when after you set a Custom Public Domain
   "message": "Generated signed URL for object"
@@ -89,7 +89,7 @@ objectStorageClient.setPublicDomain('https://r2.yourdomain.com');
 ```js
 const objectURL = await objectStorageClient.getObjectURL({
   bucketName: BUCKET_NAME,
-  keyName: 'img/image.jpg',
+  keyName: 'img/image.jpg', // path inside bucket
   expiresIn: 30 // Expires in MS
 });
 
@@ -102,7 +102,7 @@ console.log(objectURL);
   "statusCode": 200,
   "expire": 30,
   "bucket": "company",
-  "keyname": "img/image.jpg",
+  "keyname": "img/image.jpg", // path inside bucket
   "url": "https://company.7492760310487df2252ef9441759c9a0.r2.cloudflarestorage.com/img/image.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=f525dac59ab797357113dcf3dedbdbca%2F20240709%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240709T024330Z&X-Amz-Expires=30&X-Amz-Signature=e4675c9df9e2c7a32989254f87e2cabe006dc057f291a4c231c788d51c10bc29&X-Amz-SignedHeaders=host&x-id=GetObject",
   "permanentURL": "https://r2.yourdomain.com/img/image.jpg", // <--- Your permanent URL
   "message": "Generated signed URL for object"
@@ -121,7 +121,7 @@ console.log(latency);
 ```js
 const deleteResponse = await objectStorageClient.deleteObject(
   bucketName: 'your-bucket-name',
-  keyName: 'company-video.mp4'
+  keyName: 'company-video.mp4' // path inside bucket
 );
 
 console.log(deleteResponse);
